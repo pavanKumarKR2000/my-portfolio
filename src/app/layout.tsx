@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inclusive_Sans } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Sidebar from "@/components/Sidebar";
+import "react-awesome-button/dist/styles.css";
+const inter = Inclusive_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} md:pl-[145px] w-full`}>
+        <Sidebar />
+        {children}
+      </body>
     </html>
   );
 }
