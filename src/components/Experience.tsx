@@ -21,10 +21,10 @@ const eperience_arr = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="h-screen w-full">
-      <div className="flex flex-col items-center justify-center h-full w-full gap-36">
+    <section id="experience" className="md:h-screen w-full">
+      <div className="flex flex-col items-center justify-center h-full w-full gap-16 md:gap-36">
         <h2 className="text-5xl font-bold">Experience</h2>
-        <div className="grid grid-cols-2 gap-6 px-10  rounded-lg w-full">
+        <div className="flex flex-col md:flex-row  justify-center gap-4  px-1 md:px-10 w-full md:w-auto">
           {eperience_arr.map((edu) => (
             <ExperienceCard {...edu} key={edu.key} />
           ))}

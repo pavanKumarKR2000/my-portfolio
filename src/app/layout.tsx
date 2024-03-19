@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inclusive_Sans } from "next/font/google";
+import { Inclusive_Sans, Tilt_Neon } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import "react-awesome-button/dist/styles.css";
-const inter = Inclusive_Sans({ subsets: ["latin"], weight: ["400"] });
+import Parallax from "@/components/Parallax";
+const inter = Tilt_Neon({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} md:pl-[145px] w-full`}>
+      <body className={`${inter.className} md:pl-[145px] w-full relative`}>
         <Sidebar />
+        <Parallax />
         {children}
       </body>
     </html>

@@ -15,32 +15,32 @@ interface EducationCardProps {
 
 const EducationCard = ({ time, name, location, grade }: EducationCardProps) => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 md:w-[500px] gradient p-4 rounded-md">
       {/** first row */}
       <div className="flex items-center gap-3">
-        <div className="h-[1px] bg-black flex-grow" />
-        <div className="p-1 bg-black rounded-full">
-          <GraduationCap size={25} className="text-white" />
+        <div className="h-[1px] bg-white flex-grow" />
+        <div className="p-1 bg-white rounded-md">
+          <GraduationCap size={25} className="text-black" />
         </div>
-        <div className="h-[1px] bg-black flex-grow" />
+        <div className="h-[1px] bg-white flex-grow" />
       </div>
       {/** second row */}
-      <div className="p-6 flex flex-col items-center gap-4 relative">
+      <div className="p-6 flex flex-col items-center md:items-start gap-4 relative text-white">
         <div className="flex items-center gap-2">
-          <History size={25} />
-          <p className="text-slate-500">{time}</p>
+          <History size={25} className="text-slate-500" />
+          <p>{time}</p>
         </div>
         <div className="flex items-center gap-2">
-          <University size={25} />
-          <h2 className="font-bold text-lg">{name}</h2>
+          <University size={25} className="text-slate-500" />
+          <h2 className="truncate text-ellipsis">{name}</h2>
         </div>
         <div className="flex items-center gap-2">
-          <MapPin size={25} />
-          <p className="text-slate-500">{location}</p>
+          <MapPin size={25} className="text-slate-500" />
+          <p className="truncate text-ellipsis">{location}</p>
         </div>
         <div className="flex items-center gap-2">
-          <BookCheck size={25} />
-          <p className="text-slate-500">{grade}</p>
+          <BookCheck size={25} className="text-slate-500" />
+          <p>{grade}</p>
         </div>
       </div>
     </div>

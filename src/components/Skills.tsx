@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { Swords } from "lucide-react";
 
-const eeperience_arr = [
+const experience_arr = [
   {
     key: 1,
     img: "https://cdn.svgporn.com/logos/html-5.svg",
@@ -36,11 +37,16 @@ const eeperience_arr = [
     key: 7,
     img: "https://cdn.svgporn.com/logos/nextjs.svg",
     name: "NEXT JS",
+    height: 80,
+    width: 80,
+    className: "invert",
   },
   {
     key: 8,
     img: "https://cdn.svgporn.com/logos/figma.svg",
     name: "FIGMA",
+    height: 30,
+    width: 30,
   },
   {
     key: 9,
@@ -66,17 +72,32 @@ const eeperience_arr = [
 
 const Skills = () => {
   return (
-    <section id="education" className="h-screen w-full">
-      <div className="flex flex-col items-center justify-center h-full w-full gap-36">
+    <section id="skills" className="md:h-screen w-full">
+      <div className="flex flex-col items-center justify-center h-full w-full gap-16 md:gap-36">
         <h2 className="text-5xl font-bold">Skills</h2>
-        <div className="grid grid-cols-6 gap-6 px-10  rounded-lg w-full">
-          {eeperience_arr.map((exp) => (
+        <div className="grid grid-cols-1  md:grid-cols-4 lg:grid-cols-6 gap-6 px-10  rounded-lg w-full">
+          {experience_arr.map((exp) => (
             <div
               key={exp.key}
-              className="flex flex-col items-center justify-center gap-3 bg-blue-200 p-2"
+              className="space-y-4 gap-3 gradient p-4 rounded-md "
             >
-              <Image src={exp.img} height={50} width={50} alt="skills_logo" />
-              <p className="text-slate-500 italic">{exp.name}</p>
+              <div className="flex items-center gap-3">
+                <div className="h-[1px] bg-white flex-grow" />
+                <div className="p-1 bg-white rounded-md">
+                  <Swords size={25} className="text-black" />
+                </div>
+                <div className="h-[1px] bg-white flex-grow" />
+              </div>
+              <div className="flex flex-col items-center justify-center gap-2 py-2 h-[60%]">
+                <Image
+                  src={exp.img}
+                  height={exp.height ? exp.height : 50}
+                  width={exp.width ? exp.height : 50}
+                  alt="skills_logo"
+                  className={exp.className ? exp.className : ""}
+                />
+                <p className="italic text-white">{exp.name}</p>
+              </div>
             </div>
           ))}
         </div>

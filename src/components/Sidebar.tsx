@@ -12,11 +12,6 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className="sidebar_link relative">
-              About
-            </Link>
-          </li>
-          <li>
             <Link href="#education" className="sidebar_link relative">
               Education
             </Link>

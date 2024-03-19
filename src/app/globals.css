@@ -30,3 +30,17 @@ body {
   width: 100%;
   left: 0;
 }
+
+.gradient {
+  background: #000000;
+  background: linear-gradient(45deg, #000000, #312e2d);
+}
+
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 0, 0, 0.556442645417542) 100%
+  );
+}
